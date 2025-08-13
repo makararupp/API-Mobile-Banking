@@ -24,8 +24,11 @@ CREATE TABLE articles(
 # Table Relationships
 
 | Table   | Relationship | Relate Table | Foreign Key |
+
 | articles| Many-to-One  | categories   | cate_id → categories(id)|
 
 # Relationship Diagram
 
-<img height="600" src="C:\Users\Legion\Desktop\mbanking_db - SubView.png" width="300" title="" alt=""/>
+![](images/1.png)
+ 
+
