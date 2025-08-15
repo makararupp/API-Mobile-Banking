@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Main Category</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet">
 </head>
 <body>
     <h1>Category</h1>
@@ -13,5 +14,22 @@
         <br><br>
         <input type="submit" value="Save">
     </form>
+
+    <hr>
+   <table>
+       <thead>
+           <tr>
+               <th>ID</th>
+               <th>Name</th>
+           </tr>
+       </thead>
+       <tbody>
+       <tr th:each="category : ${categories}">
+           <td th:text="${category.id}"></td>
+           <td th:text="${category.name}">Category</td>
+       </tr>
+       </tbody>
+   </table>
+
 </body>
 </html>

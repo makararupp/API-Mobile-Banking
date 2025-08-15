@@ -11,4 +11,11 @@ public class CategoryProvider {
             VALUES("name", "#{cate.name}");
         }}.toString();
     }
+    public String buildSelectSql(){
+        return  new SQL(){{
+            SELECT("ID, Name");
+            FROM("categories");
+            ORDER_BY("id ASC");
+        }}.toString();
+    }
 }

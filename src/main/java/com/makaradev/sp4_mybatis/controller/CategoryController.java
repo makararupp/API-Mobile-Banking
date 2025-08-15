@@ -21,6 +21,7 @@ public class CategoryController {
     @GetMapping
     public  String viewCategory(Category category, Model model){
         model.addAttribute("category", category);
+        model.addAttribute("categories",categoryService.findAll());
         return  "pages/category/cate-main";
     }
 
