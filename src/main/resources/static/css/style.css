@@ -1,0 +1,19 @@
+body{
+    background-color: #f4f4f4;;
+    font-family: Arial, sans-serif;;
+}
+h1{
+    color: darkblue;
+    text-align: center;
+}
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+table, th, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+}

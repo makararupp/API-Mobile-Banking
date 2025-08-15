@@ -31,4 +31,15 @@ CREATE TABLE articles(
 
 ![](images/1.png)
  
+# configure application properties connection with database Oracle
+
+server.port=9000
+
+spring.datasource.url=jdbc:oracle:thin:@//localhost:1521/orcl
+
+spring.datasource.username=system
+
+spring.datasource.password=123456
+
+spring.datasource.driver-class-name=oracle.jdbc.OracleDriver
 
