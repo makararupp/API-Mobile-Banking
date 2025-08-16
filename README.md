@@ -43,3 +43,19 @@ spring.datasource.password=123456
 
 spring.datasource.driver-class-name=oracle.jdbc.OracleDriver
 
+# From Data Validation with Bean Validator.
+
+- spring boot validation dependency :
+
+   implementation 'org.springframework.boot:spring-boot-starter-validation:3.5.4'
+
+- Let's define a simple POJO, with field that we want to validate.
+
+  * @NotEmpty: is used for constrain a field of type String Collection or Array to not be null or Empty.
+  * @Min and @Max: are used to specify the limits of a variable.
+  * @NotNull: tells spring boot the filed should not be null, but it can be empty.
+  * @NotBlank: tells spring boot the filed should not be null and constrains at least one non whitespace character.
+  * @Size: [min =x, max=y] is used define rules of the size a String Collection, or Array Map.
+  * @Email: helps us to validate the string against a regex which defines the structure of a validate email.
+  * @Positive: is used to strictly positive number.
+
