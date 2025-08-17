@@ -21,3 +21,22 @@ table, th, td{
 span{
     color: red;
 }
+.category-form {
+    width: 300px;
+    margin-left: auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Right-aligns all children */
+}
+
+.category-form input[type="submit"] {
+    display: block; /* Puts button on new line */
+    margin-left: auto; /* Right-aligns the button */
+    padding: 8px 20px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    transition: background 0.3s; /* Smooth hover effect */
+}

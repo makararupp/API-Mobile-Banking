@@ -8,18 +8,17 @@
 <body>
     <h1>Category</h1>
    <hr>
-    <form th:action="@{/category/save}" method="post" th:object="${category}">
-        <label for="name">
-            Name
-            <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
-        </label>
-        <!---->
-        <input type="hidden" th:field="*{id}">
-        <input th:field="*{name}" type="text" id="name">
-        <br><br>
-        <input type="submit" value="Save">
-    </form>
-
+       <form class="category-form" th:action="@{/category/save}" method="post" th:object="${category}">
+           <label for="name">
+               Name
+               <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+           </label>
+           <!---->
+           <input type="hidden" th:field="*{id}">
+           <input th:field="*{name}" type="text" id="name">
+           <br><br>
+           <input type="submit" value="Save">
+       </form>
     <hr>
    <table>
        <thead>
