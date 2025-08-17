@@ -13,6 +13,8 @@
             Name
             <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
         </label>
+        <!---->
+        <input type="hidden" th:field="*{id}">
         <input th:field="*{name}" type="text" id="name">
         <br><br>
         <input type="submit" value="Save">
