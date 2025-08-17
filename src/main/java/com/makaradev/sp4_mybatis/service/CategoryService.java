@@ -15,4 +15,8 @@ public interface CategoryService {
 
     // Delete by Id
     void deleteById(Long id);
+    //updateId
+    Category findById(Long id);
+
+    void updateCategoryId(Long id, Category newCategory);
 }

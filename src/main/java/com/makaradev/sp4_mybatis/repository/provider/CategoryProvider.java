@@ -25,4 +25,18 @@ public class CategoryProvider {
             WHERE("id = #{id}");
         }}.toString();
     }
+    public String buildSelectByIdSql(){
+        return new SQL(){{
+            SELECT("*");
+            FROM("categories");
+            WHERE("id = #{id}");
+        }}.toString();
+    }
+    public String buildUpdateByIdSql(){
+     return  new SQL(){{
+         UPDATE("categories");
+         SET("name = #{cate.name}");
+         WHERE("id = #{cate.id}");
+     }}.toString();
+    }
 }

@@ -3,6 +3,7 @@ package com.makaradev.sp4_mybatis.repository;
 import com.makaradev.sp4_mybatis.model.Category;
 import com.makaradev.sp4_mybatis.repository.provider.CategoryProvider;
 import org.apache.ibatis.annotations.*;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
@@ -17,4 +18,11 @@ public interface CategoryRepository{
 
     @DeleteProvider(type = CategoryProvider.class , method = "buildDeleteSql")
     void deleteById(@Param("id") Long id);
+
+    @SelectProvider(type = CategoryProvider.class, method = "buildSelectByIdSql")
+    Category selectById(@PathVariable("id") Long id);
+
+    @UpdateProvider(type = CategoryProvider.class, method = "buildUpdateByIdSql")
+    void  updateCategoryId(@Param("cate") Category newCategory);
+
 }

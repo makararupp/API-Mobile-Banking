@@ -34,6 +34,8 @@
            <td>
                <!--Generate URL category/10/delete-->
                <a th:href="@{/category/{id}/delete(id =*{id})}">Delete</a>
+               <a th:href="@{/category/{id}/edit(id = *{id})}">Edit</a>
+               <a th:href="@{/category/{id}/(id = *{id})}">View</a>
            </td>
        </tr>
        </tbody>

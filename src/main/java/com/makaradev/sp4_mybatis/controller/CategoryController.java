@@ -4,6 +4,7 @@ import com.makaradev.sp4_mybatis.model.Category;
 import com.makaradev.sp4_mybatis.service.CategoryService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -12,11 +13,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.util.logging.Logger;
 
 @Controller
 @RequestMapping("/category")
 @RequiredArgsConstructor
+@Slf4j
 public class CategoryController {
 
     private final CategoryService categoryService;
@@ -35,7 +36,12 @@ public class CategoryController {
             //return "pages/category/cate-main";
             return viewCategory(category, model);
         }
-       categoryService.AddNewCategory(category); // save if valid.
+        log.info("Category saved :"+category);
+        if(category.getId() == null){
+            categoryService.AddNewCategory(category);
+        }else{
+            categoryService.updateCategoryId(category.getId(), category);
+        }
         return "redirect:/category"; // redirect to listing page.
     }
 
@@ -43,6 +49,12 @@ public class CategoryController {
     public String deleteCategoryById(@PathVariable("id") Long id){
         categoryService.deleteById(id);
         return "redirect:/category";
+    }
+
+    @GetMapping("/{id}/edit")
+    public String updateCategoryById(@PathVariable("id") Long id, Model model){
+        Category updateNewCate = categoryService.findById(id);
+        return viewCategory(updateNewCate, model);
     }
 
 }
