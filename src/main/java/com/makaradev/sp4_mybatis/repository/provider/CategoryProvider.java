@@ -18,4 +18,11 @@ public class CategoryProvider {
             ORDER_BY("id ASC");
         }}.toString();
     }
+
+    public String  buildDeleteSql(){
+        return  new SQL(){{
+            DELETE_FROM("categories");
+            WHERE("id = #{id}");
+        }}.toString();
+    }
 }

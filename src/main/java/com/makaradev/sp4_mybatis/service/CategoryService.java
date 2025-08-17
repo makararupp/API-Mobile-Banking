@@ -12,4 +12,7 @@ public interface CategoryService {
 
     // find all categories
     List<Category> findAll();
+
+    // Delete by Id
+    void deleteById(Long id);
 }
