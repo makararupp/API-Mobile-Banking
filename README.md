@@ -59,3 +59,31 @@ spring.datasource.driver-class-name=oracle.jdbc.OracleDriver
   * @Email: helps us to validate the string against a regex which defines the structure of a validate email.
   * @Positive: is used to strictly positive number.
 
+# Create Procedure get_article_count
+
+CREATE OR REPLACE FUNCTION get_article_count(
+                    p_keyword IN VARCHAR2
+
+) RETURN NUMBER
+
+IS
+
+v_article_count NUMBER;
+
+BEGIN
+SELECT COUNT(*)
+INTO v_article_count
+
+FROM articles
+
+WHERE UPPER(title) LIKE '%' || UPPER(p_keyword) || '%';
+
+    RETURN v_article_count;
+EXCEPTION
+
+WHEN OTHERS THEN
+-- Return -1 to indicate error (or you could raise the exception)
+RETURN -1;
+
+END get_article_count;
+/
