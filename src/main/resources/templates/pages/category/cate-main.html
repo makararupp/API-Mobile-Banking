@@ -11,7 +11,7 @@
        <form class="category-form" th:action="@{/category/save}" method="post" th:object="${category}">
            <label for="name">
                Name
-               <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+               <span class="error-message" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
            </label>
            <!---->
            <input type="hidden" th:field="*{id}">
@@ -20,7 +20,8 @@
            <input type="submit" value="Save">
        </form>
     <hr>
-   <table>
+   <div class="table-container">
+    <table>
        <thead>
            <tr>
                <th>ID</th>
@@ -42,5 +43,6 @@
        </tbody>
    </table>
 
+   </div>
 </body>
 </html>
