@@ -87,3 +87,41 @@ RETURN -1;
 
 END get_article_count;
 /
+
+# Common MyBatis Annotations
+
+| Annotation | Purpose                                                                     | Example Usage |
+|------------|-----------------------------------------------------------------------------|---------------|
+| @Mapper    | Marks an interface as MyBatis mapper.<br> Required for Spring to detect it. | @Mapper       |
+| @Select    | Execute a Sql **SELECT** Query a map the result.                            | @Select       |
+| @Insert    | Execute a Sql **INSERT** insert to statement.                               | @Insert       |
+| @Update    | Execute a Sql **UPDATE** statement.                                         | @Update       |
+| @Delete    | Execute a Sql **DELETE** statement.                                         | @Delete       |
+|            |                                                                             |               |
+
+# Advance Mapping Annotations
+
+| Annotation | Purpose                                                                  | Example Usage                                                                         |
+|------------|--------------------------------------------------------------------------|---------------------------------------------------------------------------------------|
+| @Results   | Define custom result mappings <br> between DB columns and object fields. | see below                                                                             |
+| @Result    | Used inside **@Result** to map individual columns.                       | @Result(column "user_name",<br>property="name")                                       |
+| @Option    | Sets options like **useGeneratedKeys** **keyProperty**, etc.             | @Options(useGeneratedKey =true, keyProperty"id")                                      |
+| @Param     | Named method parameters for us Sql queries.                              | @Select("SELECT *FROM users <br> WHERE name =#{name)",with @Param("name") String name |
+
+# Sql Dynamic Provider 
+  
+- Definition : allow you to write Dynamic sql logic in java methods instead of embedding it directly is annotation or XMl.
+
+ | Annotations     | Purpose                                       |
+|-----------------|-----------------------------------------------|
+| @SelectProvider | Provides Dynamic SQL for **SELECT**  queries. |
+| @InsertProvider | Provides Dynamic SQL for **INSERT**  queries. |
+ | @UpdateProvider | Provides Dynamic SQL for **UPDATE**  queries. |
+ | @DeleteProvider | Provides Dynamic SQL for **DELETE**  queries. |
+
+
+# Benefits of SQL Providers
+
+- Clean logic separation: Sql lives a dedicated class, not cluttering your mapper.
+- Dynamic Flexibility: Easy build queries based on optional parameters.
+- Reusable SQL fragments: You can centralize logic for multiple mappers.
