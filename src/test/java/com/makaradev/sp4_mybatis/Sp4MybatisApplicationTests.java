@@ -13,6 +13,7 @@ class Sp4MybatisApplicationTests {
 
 	@Test
 	void testSelectArticle(){
+		//TODO:
 		System.out.println(articleRepository.select());
 	}
 	@Test

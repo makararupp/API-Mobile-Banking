@@ -12,6 +12,7 @@ import java.util.List;
 @Mapper
 public interface ArticleRepository {
     @SelectProvider(type = ArticleProvider.class, method = "buildSelectSql")
+    //need to map field if explicitly with @Result/@Results depends on class property names match the DB.
     @Results(id = "articleResultMap",value = {
             @Result(column = "id", property = "id"),
             @Result(column = "title", property = "title"),

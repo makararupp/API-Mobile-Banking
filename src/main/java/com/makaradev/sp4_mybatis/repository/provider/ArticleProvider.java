@@ -17,7 +17,6 @@ public class ArticleProvider {
             FROM("articles");
         }}.toString();
     }
-
     public String buildCountArticleSql(){
         return  new SQL(){{
              SELECT("get_article_count(#{keyword})");
