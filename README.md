@@ -29,7 +29,7 @@ CREATE TABLE articles(
 
 # Relationship Diagram
 
-![](images/1.png)
+![](src/main/resources/static/images/1.png)
  
 # configure application properties connection with database Oracle
 

@@ -1,15 +1,16 @@
 package com.makaradev.sp4_mybatis.model;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
-@AllArgsConstructor
+@NoArgsConstructor
+//required default constructor.
 public class Article {
     private Long id;
     private String title;
     private String description;
-   // private  Category category;
+    private  Category category;
     private Boolean status;
 
 }

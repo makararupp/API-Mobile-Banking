@@ -12,6 +12,10 @@ class Sp4MybatisApplicationTests {
    private ArticleRepository articleRepository;
 
 	@Test
+	void testSelectArticle(){
+		System.out.println(articleRepository.select());
+	}
+	@Test
 	void testCountArticleByKeyword(){
 		//TODO:
 		System.out.println("The result article Test counter:"+articleRepository.countArticle("java"));
