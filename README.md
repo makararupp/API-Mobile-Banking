@@ -125,3 +125,7 @@ END get_article_count;
 - Clean logic separation: Sql lives a dedicated class, not cluttering your mapper.
 - Dynamic Flexibility: Easy build queries based on optional parameters.
 - Reusable SQL fragments: You can centralize logic for multiple mappers.
+
+# Post Redirect to GET in Article management system :
+
+![](src/main/resources/static/images/addNewArticle.png)
