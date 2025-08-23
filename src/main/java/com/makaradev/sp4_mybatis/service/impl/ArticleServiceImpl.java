@@ -16,4 +16,12 @@ public class ArticleServiceImpl implements ArticleService {
     public List<Article> findAll() {
         return articleRepository.select();
     }
+
+    @Override
+    public void addNewArticle(Article article) {
+        System.out.println(article);
+        articleRepository.insert(article);
+    }
+
+    
 }

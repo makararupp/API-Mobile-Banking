@@ -11,6 +11,12 @@ import java.util.List;
 @Repository
 @Mapper
 public interface ArticleRepository {
+
+    //add annotaion @OPtion generatedKey if the table PK.
+     @Options(useGeneratedKeys = true, keyProperty = "id", keyColumn = "id")
+     @InsertProvider(type = ArticleProvider.class, method = "buildInsertSql")
+     void insert(@Param("a") Article article);
+
     @SelectProvider(type = ArticleProvider.class, method = "buildSelectSql")
     //need to map field if explicitly with @Result/@Results depends on class property names match the DB.
     @Results(id = "articleResultMap",value = {

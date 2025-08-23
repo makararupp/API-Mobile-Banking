@@ -1,10 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Article</title>
+    <link th:href="@{/css/article.css}" rel="stylesheet">
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/css/all.min.css}" rel="stylesheet">
 </head>
 <body>
    <h1>Article Management</h1>
+   <a href="/article/save">Add New</a>
+   <hr>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>TITLE</th>
+            <th>DESCRIPTION</th>
+            <th>CATEGORY</th>
+            <th>STATUS</th>
+            <th>ACTION</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="article : ${articles}" th:object="${article}">
+            <td th:text="*{id}"></td>
+            <td th:text="*{title}"></td>
+            <td th:text="*{description}"></td>
+            <td th:text="*{category.id}"></td>
+            <td th:text="*{status}"></td>
+            <td>
+                <a href="#">Delete</a>
+                <a href="#">Edit</a>
+                <a href="#">View</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
 </body>
 </html>

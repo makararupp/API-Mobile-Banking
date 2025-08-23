@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface ArticleService {
     List<Article> findAll();
+    void addNewArticle(Article article);
 }

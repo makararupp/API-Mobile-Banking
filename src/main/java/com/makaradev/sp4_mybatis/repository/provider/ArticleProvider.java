@@ -3,6 +3,16 @@ package com.makaradev.sp4_mybatis.repository.provider;
 import org.apache.ibatis.jdbc.SQL;
 
 public class ArticleProvider {
+    public String buildInsertSql(){
+        return new SQL(){{
+            INSERT_INTO("articles");
+            VALUES("title", "#{a.title}");
+            VALUES("thumbnail", "#{a.thumbnail}");
+            VALUES("description", "#{a.description}");
+            VALUES("cate_id", "#{a.category.id}");
+            
+        }}.toString();
+    }
 
     public String buildSelectArticleCategorySql(){
         return new SQL(){{

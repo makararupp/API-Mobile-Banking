@@ -1,0 +1,36 @@
+body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #f4f4f4;;
+    font-family: Arial, sans-serif;;
+}
+:root {
+    --primary: #4361ee;
+    --secondary: #6c757d;
+    --success: #28a745;
+    --danger: #dc3545;
+    --warning: #ffc107;
+    --info: #17a2b8;
+    --light: #f8f9fa;
+    --dark: #343a40;
+}
+h1{
+    color: darkblue;
+    text-align: center;
+}
+table, th, td{
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    text-align: left;
+    border: 1px solid black;
+    padding: 12px 15px;
+    top: 0;
+    position: sticky;
+    z-index: 10;
+    font-weight: 300;
+    background-color: #f8f9fa;
+    word-wrap: break-word;
+}
