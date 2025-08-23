@@ -129,3 +129,7 @@ END get_article_count;
 # Post Redirect to GET in Article management system :
 
 ![](src/main/resources/static/images/addNewArticle.png)
+
+# Make Up form Add new Article
+
+![](src/main/resources/static/images/makeUp.png)
