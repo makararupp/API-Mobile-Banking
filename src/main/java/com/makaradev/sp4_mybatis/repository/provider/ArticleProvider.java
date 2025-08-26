@@ -7,10 +7,8 @@ public class ArticleProvider {
         return new SQL(){{
             INSERT_INTO("articles");
             VALUES("title", "#{a.title}");
-            VALUES("thumbnail", "#{a.thumbnail}");
             VALUES("description", "#{a.description}");
             VALUES("cate_id", "#{a.category.id}");
-            
         }}.toString();
     }
 

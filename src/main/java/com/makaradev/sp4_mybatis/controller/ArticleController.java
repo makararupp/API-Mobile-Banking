@@ -21,7 +21,9 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ArticleController {
     private final ArticleService articleService;
+
     private final CategoryService categoryService;
+
 
     @GetMapping
     public String viewArticles(Model model){
@@ -37,17 +39,19 @@ public class ArticleController {
         return "pages/article/article-save";
     }
 
-    @PostMapping("/save")
+    @PostMapping(value = "/save")
     public String saveArticle(@Valid Article article, BindingResult result,
-     Model model, @RequestParam("thumbnailFile")MultipartFile file){
+                              Model model, @RequestParam("thumbnailFile")MultipartFile file){
       if(result.hasErrors() || file.isEmpty()){
           System.out.println(article);
+          System.out.println(file);
           if(file.isEmpty()){
               model.addAttribute("isFileEmpty",true);
           }
           return viewSaveArticle(article,model);
-      }
-      System.out.println(file.getOriginalFilename());
+
+       }
+       articleService.addNewArticle(article, file);
         return "redirect:/article";
     }
 }

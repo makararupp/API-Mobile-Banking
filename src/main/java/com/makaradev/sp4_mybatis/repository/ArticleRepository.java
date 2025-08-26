@@ -22,6 +22,7 @@ public interface ArticleRepository {
     @Results(id = "articleResultMap",value = {
             @Result(column = "id", property = "id"),
             @Result(column = "title", property = "title"),
+            @Result(column = "thumbnail",property = "thumbnail"),
             @Result(column = "description", property = "description"),
             @Result(column = "status", property = "status"),
             @Result(column = "cate_id",property = "category" ,

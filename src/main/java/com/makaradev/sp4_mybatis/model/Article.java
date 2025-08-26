@@ -13,7 +13,7 @@ public class Article {
 
     @NotBlank(message = "tittle is required..!")
     private String title;
-    private String thumbnail;
+    private byte[] thumbnail;
     private String description;
     @NotNull(message = "category is required..!")
     private  Category category;
